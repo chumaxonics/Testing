@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PageLoadTest {
     private WebDriver driver;
 
-    //This method will run once before all of the tests in our class
+    //This method will run once before all the tests in our class
     @BeforeClass
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
