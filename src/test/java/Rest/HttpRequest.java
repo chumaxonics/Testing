@@ -1,15 +1,6 @@
 package Rest;
 
-import com.google.common.base.Predicates;
-import io.restassured.matcher.ResponseAwareMatcher;
-import io.restassured.response.Response;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-
-
+import org.testng.annotations.Test;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
@@ -18,10 +9,10 @@ import static org.hamcrest.Matcher.*;
 
 
 public class HttpRequest {
-WebDriver driver;
+int id;
 
 
-    @Test
+     @Test(priority=1)
     public void HttpRequestGetUsersTest() {
           given()
                 .when()
@@ -50,6 +41,27 @@ WebDriver driver;
                 .statusCode(201)
                 .log().all();
     }
+
+
+    @Test(priority=2)
+    public void createUserAndGetResponseIdTest(){
+        HashMap  data = new HashMap<>();
+        data.put("name","Nyiko");
+        data.put("Job","Automation Engineer");
+
+      id=given()
+                .contentType("application/json")
+                .body(data)
+                .when()
+                .post("https://reqres.in/api/users")
+                .jsonPath().getInt("id");
+    }
+    @Test(priority=3)
+    public  void  updateUser(){
+
+    }
+
+
 
     //given
 

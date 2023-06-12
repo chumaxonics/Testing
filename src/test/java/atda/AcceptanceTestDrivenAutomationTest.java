@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 public class AcceptanceTestDrivenAutomationTest {
     WebDriver driver;
-    //This method will run once before all of the tests in our class
+    //This method will run once before all the tests in our class
     @BeforeClass
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
@@ -47,7 +47,7 @@ public class AcceptanceTestDrivenAutomationTest {
     }
 
     private WebDriver getDriver() {
-        //Using WebDriverManager package, we dopn't have to not worry about
+        //Using WebDriverManager package, we don't have to not worry about
         //where the ChromeDriver comes from and if it's the latest
         return new ChromeDriver();
     }

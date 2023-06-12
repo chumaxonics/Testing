@@ -1,10 +1,9 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -53,5 +52,24 @@ public class OnlineTest {
     @AfterMethod
     public void tearDown() {
         driver.quit();
+    }
+
+    public void doubleClick(WebElement element){
+        doubleClick(element);
+    }
+
+    public void acceptAlert() {
+        driver.switchTo().alert().accept();
+    }
+
+    public void scroll(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,50");
+
+    }
+    public void validateAlert(String text){
+        Alert myAlert = driver.switchTo().alert();
+        Assert.assertTrue(myAlert.getText().equals(text));
+        myAlert.accept();
     }
 }
