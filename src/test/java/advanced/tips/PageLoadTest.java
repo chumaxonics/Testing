@@ -11,6 +11,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PageLoadTest {
     private WebDriver driver;
 
+    public PageLoadTest(WebDriver driver) {
+        this.driver = driver;
+    }
+
     //This method will run once before all the tests in our class
     @BeforeClass
     public static void setupClass() {
@@ -31,5 +35,11 @@ public class PageLoadTest {
     private WebDriver getDriver() {
         //Using WebDriverManager package, we are able to not worry about
         return new ChromeDriver();
+    }
+
+
+
+    public void addTocart(Items items){
+
     }
 }
