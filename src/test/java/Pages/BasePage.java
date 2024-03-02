@@ -173,6 +173,13 @@ public class BasePage {
         actions.dragAndDropBy(element, x, y).perform();
     }
 
+    public void dragByIdAndDrop(String draggableElement,String droppableElement) {
+        WebElement draggable = driver.findElement(By.id(draggableElement));
+        WebElement droppable = driver.findElement(By.id(droppableElement));
+        new Actions(driver)
+                .dragAndDrop(draggable, droppable)
+                .perform();
+    }
     public void dismissPopup() {
         driver.switchTo().alert().dismiss();
     }
@@ -274,6 +281,7 @@ public class BasePage {
         Cookie cookie = new Cookie(name, value);
         driver.manage().addCookie(cookie);
     }
+
 
     public Cookie getCookie(String name) {
         return driver.manage().getCookieNamed(name);

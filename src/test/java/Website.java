@@ -35,6 +35,17 @@ public class Website {
 
     @Test
     public void bookstoreTestTwo() throws InterruptedException {
+        
+
+        char c ='A';
+
+        int p=c;
+
+
+
+
+
+
 
         driver.get("https://demoqa.com/books");
       //  driver.switchTo().frame(3);
