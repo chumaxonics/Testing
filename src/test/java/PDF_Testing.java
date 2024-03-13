@@ -1,4 +1,3 @@
-import io.restassured.response.Response;
 import org.junit.Test;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,44 +6,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Base64;
-import java.util.LinkedHashMap;
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class APITesting {
-
-    @Test
-    public void APITest() {
-
-        given()
-                .contentType("application/json")
-                .when()
-                .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-                .then()
-                .log().all();
-
-        //"rate": "25,467.2065",
+public class PDF_Testing {
 
 
-
-    }
-    @Test
-    public void APITesRatet() {
-
-        Response response =  given()
-                .contentType("application/json")
-                .when()
-                .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-                .jsonPath().get();
-
-        System.out.println(response.getBody().peek());
-
-
-
-        //"rate": "25,467.2065",
-
-    }
     @Test
     public void Test() {
         getDecoder_();
@@ -62,7 +29,7 @@ public class APITesting {
         }
     }
 
-    public String readFile(String filePath) throws IOException {
+    public String readFile(String filePath) throws IOException { // only takes one line and ignore the rest
         /*
         C:\Users\pankaj\Desktop\test.java
          */
