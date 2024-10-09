@@ -12,7 +12,7 @@ class Node{
 
 class LeftViewOfTree{
     int maxLevel=0;
-    void viewLeft(Node root, int level, List<Integer> result){
+    void leftView(Node root, int level, List<Integer> result){
         if(root==null){
             return;
         }
@@ -20,8 +20,8 @@ class LeftViewOfTree{
             result.add(root.data);
             maxLevel=level;
         }
-        viewLeft(root.left,level+1, result);
-        viewLeft(root.right,level+1, result);
+        leftView(root.left,level+1, result);
+        leftView(root.right,level+1, result);
     }
 }
 public class BinaryTreeSolution {
@@ -33,7 +33,7 @@ public class BinaryTreeSolution {
 
         List<Integer> result = new ArrayList<>();
         LeftViewOfTree treeInstance= new LeftViewOfTree();
-        treeInstance.viewLeft(root,1,result);
+        treeInstance.leftView(root,1,result);
 
         for (Integer integer:result)
           {
