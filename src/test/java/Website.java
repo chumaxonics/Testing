@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class Website {
     WebDriver driver;
     @BeforeMethod
@@ -49,7 +51,7 @@ public class Website {
 
         driver.get("https://demoqa.com/books");
       //  driver.switchTo().frame(3);
-        WebDriverWait wait = new  WebDriverWait(driver,10);
+        WebDriverWait wait = new  WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement loginButton =wait.until(ExpectedConditions.presenceOfElementLocated(By.id(("login"))));
         loginButton.click();
 
@@ -78,7 +80,7 @@ public class Website {
 
 
     public void search() {
-        WebDriverWait wait = new  WebDriverWait(driver,10);
+        WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement search =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"searchBox\"]")));
         search.sendKeys("Programming JavaScript Applications");
 
@@ -86,13 +88,13 @@ public class Website {
 
     public void  login( ){
         driver.switchTo().frame(1);
-        WebDriverWait wait = new  WebDriverWait(driver,10);
+        WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement loginButtonSecond =wait.until(ExpectedConditions.presenceOfElementLocated((By.id("login"))));
         loginButtonSecond.click();
     }
 
     public  void  clickBook(){
-        WebDriverWait wait = new  WebDriverWait(driver,10);
+        WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement search =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div/div[2]/div/span/a")));
         search.click();
     }
@@ -100,7 +102,7 @@ public class Website {
 
     public String  getInformation(){
 
-        WebDriverWait wait = new  WebDriverWait(driver,10);
+        WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement search =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]")));
        return search.getText();
     }
@@ -108,7 +110,7 @@ public class Website {
     public void login(String Xpathusername, String Xpathpassword, String XpathButton){
         WebDriver driver;
         driver = new ChromeDriver();
-        WebDriverWait wait = new  WebDriverWait(driver,10);
+        WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement loginUsername =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpathusername)));
         WebElement loginPassword =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpathpassword)));
         WebElement loginButton =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(XpathButton)));

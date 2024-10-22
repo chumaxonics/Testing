@@ -156,7 +156,7 @@ public class BasePage {
     }
 
     public boolean waitForPageTitle(String title) {
-        WebDriverWait wait = new WebDriverWait(driver, 12);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.titleContains(title));
     }
 
@@ -194,7 +194,7 @@ public class BasePage {
 
     public void waitForElementText(By locator, String text) {
         // This is an explicit wait
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.textToBe(locator, text));
 
         // This is a FluentWait. It does the same as the above wait, but it is more customizable

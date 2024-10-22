@@ -35,7 +35,7 @@ public class Duplication {
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.className("btn_action")).submit();
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         boolean isDisplayed = wait.until(
                 ExpectedConditions.presenceOfElementLocated(By.id("inventory_filter_container"))).isDisplayed();
         assertTrue(isDisplayed);
@@ -46,7 +46,7 @@ public class Duplication {
         driver.findElement(By.id("user-name")).sendKeys("problem_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.className("btn_action")).submit();
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         boolean isDisplayed = wait.until(
                 ExpectedConditions.presenceOfElementLocated(By.id("inventory_filter_container"))).isDisplayed();
         assertTrue(isDisplayed);
@@ -72,7 +72,7 @@ public class Duplication {
         assertTrue(isDisplayed);
     }
     private boolean waitUntilDisplayed(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(locator)).isDisplayed();
     }

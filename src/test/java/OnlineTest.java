@@ -43,7 +43,7 @@ public class OnlineTest {
     }
 
     public void flow(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement singIn = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("")));
 
     }
@@ -53,7 +53,7 @@ public class OnlineTest {
         WebElement loginUserName = driver.findElement(By.xpath("//*[@id=\"user-name\"]"));
         WebElement loginInputPassword = driver.findElement(By.xpath("//*[@id=\"password\"]"));
         WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-button\"]"));
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement singIn = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"user-name\"]")));
         loginUserName.sendKeys(username);
         loginInputPassword.sendKeys(password);
@@ -105,14 +105,14 @@ public class OnlineTest {
 
     public void typeIntoXpath(String element, String information){
        LOG.info("Typing into "+element);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
         webElement.sendKeys(information);
     }
 
     public void typeIntoId(String element, String information){
           LOG.info("Typing into "+element);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(element)));
         webElement.sendKeys(information);
     }
@@ -120,7 +120,7 @@ public class OnlineTest {
     public void clickId(String element){
         try{
          LOG.info("Clicking "+element);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(element)));
         webElement.click();}
         catch (Exception err){
@@ -130,7 +130,7 @@ public class OnlineTest {
 
     public void clickXpath(String element){
          LOG.info("Clicking"+element);
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
         webElement.click();
     }

@@ -47,19 +47,19 @@ public class Synchronization {
     @Test(expected = org.openqa.selenium.TimeoutException.class)
     public void explicitWaitFixesImplicitWaitIssues() {
         driver.get(elementExistsInDOM);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     @Test
     public void explicitWaitWhenElementPresent() {
         driver.get(elementExistsInDOM);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
     @Test
     public void correctSynchronization() {
         driver.get(elementRenderedAfter);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement startButton =
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("start"))).findElement(By.xpath("//button"));
         startButton.click();

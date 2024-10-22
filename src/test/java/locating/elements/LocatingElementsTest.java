@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 import static org.junit.Assert.assertTrue;
 public class LocatingElementsTest {
     @BeforeClass
@@ -23,7 +26,7 @@ public class LocatingElementsTest {
         //2. navigate to the URL
         driver.get("https://www.saucedemo.com/");
         //3. Find element //4. check the state
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(
                 ExpectedConditions.presenceOfElementLocated(By.id("user-name")));
         //5. take action //6. record the result
