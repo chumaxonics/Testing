@@ -1,7 +1,6 @@
-package advanced.tips;
+package new_xml_topics;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;

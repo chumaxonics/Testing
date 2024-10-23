@@ -1,4 +1,4 @@
-package best.practices;
+package web_based_topics;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

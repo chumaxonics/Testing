@@ -1,4 +1,4 @@
-package best.practices;
+package web_based_topics;
 
 import org.junit.After;
 import org.junit.Before;

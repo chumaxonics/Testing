@@ -1,3 +1,5 @@
+package research_new_topics;
+
 import org.junit.Test;
 import java.io.File;
 import java.io.FileOutputStream;

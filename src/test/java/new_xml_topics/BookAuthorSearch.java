@@ -1,4 +1,4 @@
-package advanced.tips;
+package new_xml_topics;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

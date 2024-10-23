@@ -1,4 +1,4 @@
-package best.practices;
+package web_based_topics;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

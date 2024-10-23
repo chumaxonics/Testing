@@ -1,7 +1,10 @@
+package research_new_topics;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,18 +40,6 @@ public class Website {
 
     @Test
     public void bookstoreTestTwo() throws InterruptedException {
-        
-
-        char c ='A';
-
-        int p=c;
-
-
-
-
-
-
-
         driver.get("https://demoqa.com/books");
       //  driver.switchTo().frame(3);
         WebDriverWait wait = new  WebDriverWait(driver, Duration.ofSeconds(10));
@@ -66,10 +57,12 @@ public class Website {
 
         //search for book
         search();
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
+        System.out.println("---we are here --");
+
         clickBook();
 
         System.out.println( "  ISBN :" + getInformation());
-
         if(getInformation().trim().equals("9781491950296") ){
             System.out.println("Passed");
         }else {
@@ -77,25 +70,21 @@ public class Website {
         }
 
     }
-
-
     public void search() {
         WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement search =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"searchBox\"]")));
         search.sendKeys("Programming JavaScript Applications");
 
     }
-
     public void  login( ){
         driver.switchTo().frame(1);
         WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement loginButtonSecond =wait.until(ExpectedConditions.presenceOfElementLocated((By.id("login"))));
         loginButtonSecond.click();
     }
-
-    public  void  clickBook(){
+    public  void  clickBook() throws InterruptedException {
         WebDriverWait wait = new  WebDriverWait(driver,Duration.ofSeconds(10));
-        WebElement search =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div/div[2]/div/span/a")));
+        WebElement search =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(), 'Programming JavaScript')]")));
         search.click();
     }
 
@@ -114,7 +103,6 @@ public class Website {
         WebElement loginUsername =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpathusername)));
         WebElement loginPassword =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpathpassword)));
         WebElement loginButton =wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(XpathButton)));
-
         loginButton.click();
         loginUsername.sendKeys(Username);
         loginPassword.sendKeys(password);
