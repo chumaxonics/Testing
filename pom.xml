@@ -94,7 +94,7 @@
             <version>5.9.2</version>
             <scope>test</scope>
         </dependency>
-        <!-- Latest version for Rest - Assured -->
+        <!-- Latest version for new_technologies - Assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>

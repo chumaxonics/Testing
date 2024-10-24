@@ -33,6 +33,7 @@ public class BuyBook {
     public void bookstoreTest() throws InterruptedException {
         WebDriver driver;
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get(linkNavigation);
         driver.switchTo().frame(1);
         WebDriverWait wait = new  WebDriverWait(driver, Duration.ofSeconds(10));

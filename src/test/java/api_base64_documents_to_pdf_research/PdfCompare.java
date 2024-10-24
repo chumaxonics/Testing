@@ -1,4 +1,4 @@
-package pdfcompare;
+package api_base64_documents_to_pdf_research;
 import de.redsix.pdfcompare.PdfComparator;
 import org.junit.Test;
 
